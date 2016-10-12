@@ -12,7 +12,7 @@ def mask_level(img, level):
     
     return img
 
-def coactivation_contrast(dataset, infile, regions=None, target_thresh=0.03, 
+def coactivation_contrast(dataset, infile, regions=None, target_thresh=0.01, 
                           other_thresh=0.01, q=0.01, contrast='others'):
     """ Performs meta-analyses to contrast co-activation in a target region vs
     co-activation of other regions. Contrasts every region in "regions" vs
@@ -23,8 +23,6 @@ def coactivation_contrast(dataset, infile, regions=None, target_thresh=0.03,
     regions: which regions in image to contrast
     target_thresh: activaton threshold for retrieving ids for target region
     other_thresh: activation threshold for ids in other regions
-                  - This should be proportionally lower than target thresh since
-                    multiple regions are being contrasted to one, and thus should de-weighed
     stat: which image to return from meta-analyis. Default is usually correct
     
     returns: a list of nifti images for each contrast performed of length = len(regions) """
@@ -37,6 +35,9 @@ def coactivation_contrast(dataset, infile, regions=None, target_thresh=0.03,
     affine = image.get_affine()
 
     stat="pFgA_z_FDR_%s" % str(q)
+
+    if regions == None:
+        regions = np.round(np.unique(infile.get_data()))[1:]
         
     meta_analyses = []
     for reg in regions:
