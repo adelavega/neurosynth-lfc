@@ -20,6 +20,6 @@ For visualization:
 - pandas
 - seaborn
 - pysurfer
-  - Note, pysurfer can be difficult to install. Feel free to visualize using nilearn or your package of choice instead. I've had success - installing it under canopy.
+  - Note, pysurfer can be difficult to install. Feel free to visualize using nilearn or your package of choice instead. I've had success installing it under canopy.
 
 Unzip pre-generated Neurosynth dataset prior to analysis
