@@ -5,13 +5,13 @@ Follow along the Clustering, Coactivation, and Functional preference profiles no
 
 Requirements
 
-- Python 2.7.x or Python 3
+- Python 2.7.x 
 - neurosynth (github.com/neurosynth/neurosynth)
  Note: Install directly from github: pip install git+https://github.com/neurosynth/neurosynth.git
 - Scipy/Numpy
 - scikit-learn
 - joblib 0.10
-- nibabel 2.x
+- nibabel 1.x (2.x will NOT work)
 - fastcluster
 
 For visualization:
