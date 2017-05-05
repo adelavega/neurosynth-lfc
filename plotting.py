@@ -1,4 +1,3 @@
-from tools import compress_values
 import seaborn as sns
 from copy import deepcopy
 import numpy as np
@@ -7,6 +6,13 @@ import nibabel as nib
 from surfer import project_volume_data
 import matplotlib.pyplot as plt
 import pylab as pl
+
+def compress_values(array):
+    unique = np.unique(array)
+    d = dict(zip(unique, np.arange(0, unique.shape[0])))
+     
+    for k, v in d.iteritems(): array[array==k] = v
+    return array
 
 def surf_clusters(brain, nifti, colormap=None, level_mask=None, **kwargs):
     """" Display a nifti image of a clustering solution (discrete values) onto a pysurfer brain bilaterally
