@@ -1,5 +1,5 @@
 # neurosynth-lfc
-Final parcellation images are available under images/
+Final parcellation images are available under images/ and on NeuroVault (http://neurovault.org/collections/1951/)
 
 Follow along the Clustering, Coactivation, and Functional preference profiles notebooks to recreate analyses, results and visualizations from the article. These notebooks are intended to allow researchers to easily perform similar analyses on other brain areas of interest.
 
